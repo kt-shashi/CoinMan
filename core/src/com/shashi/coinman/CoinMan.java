@@ -13,6 +13,8 @@ import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;
 import java.util.Random;
 
+import sun.rmi.runtime.Log;
+
 public class CoinMan extends ApplicationAdapter {
     SpriteBatch batch;
 
@@ -154,8 +156,11 @@ public class CoinMan extends ApplicationAdapter {
             velocity += gravity;
             manY -= velocity;
 
+
             if (manY <= 0) {
                 manY = 0;
+            } else if (manY > 1800) {
+                manY = 1750;
             }
 
 
